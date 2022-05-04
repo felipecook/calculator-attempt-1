@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
   <title>Calculator</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
   <header class="container header__container">
@@ -15,24 +17,38 @@
   <section class="container calculator__container">
     <div class="calculator">
       <div class="display">
-
+        <span>1234</span>
       </div>
       <div class="buttons">
-        <button id="number1"></button>
-        <button id="number2"></button>
-        <button id="number3"></button>
-        <button id="number4"></button>
-        <button id="number5"></button>
-        <button id="number6"></button>
-        <button id="number7"></button>
-        <button id="number8"></button>
-        <button id="number9"></button>
+        <div class="operators">
+          <button id="add__operator">+</button>
+          <button id="subtract__operator">-</button>
+          <button id="multiply__operator">*</button>
+          <button id="divide__operator">/</button>
+          <button id="equals__operator">=</button>
+          <button id="clear__operator"></button>
+        </div>
+        <div class="numberbuttons">
+          <button id="number1">1</button>
+          <button id="number2">2</button>
+          <button id="number3">3</button>
+          <button id="number4">4</button>
+          <button id="number5">5</button>
+          <button id="number6">6</button>
+          <button id="number7">7</button>
+          <button id="number8">8</button>
+          <button id="number9">9</button>
+        </div>
+        <div class="">
+
+        </div>
 
 
       </div>
     </div>
   </section>
-  
+
   <script src="application.js"></script>
 </body>
+
 </html>
