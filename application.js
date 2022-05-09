@@ -44,7 +44,7 @@ const numbers = document.querySelectorAll(".number");
 const operators = document.querySelectorAll(".operator");
 const equals = document.querySelector("#equals__operator");
 
-const display = document.querySelector(".display");
+const display = document.querySelector(".display__text");
 
 equals.addEventListener('click', equate);
 
