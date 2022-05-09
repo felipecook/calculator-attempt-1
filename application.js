@@ -57,10 +57,47 @@ function clearCalculator() {
 function equate (){
   const equation = display.innerHTML.trim();
   
-  console.log(equation);
-  console.log(equation.length)
+  // console.log(equation);
+  // console.log(equation.length)
 
   if (equation.length > 5) {
+    let flag = false;
+    for (let index = 0; index < equation.length; index++) {
+      const element = equation[index];
+      if ((element === '+' || element === '-' || element === '/' || element === '*') && flag === true) {
+        let firstNumber = 0;
+        let secondNumber = 0;
+        let operator = 0;
+        
+        for (let jindex = 0; jindex <= index; jindex++) {
+          secondElement = equation[jindex]; 
+          if (secondElement === '+' || secondElement === '-' || secondElement === '/' || secondElement === '*') {
+            firstNumber = equation.slice(0, jindex);
+            operator = equation[jindex];
+            secondNumber = equation.slice(jindex + 1, index);
+            firstNumber = trimExtra(firstNumber);
+            secondNumber = trimExtra(secondNumber);
+
+            console.log("The first number is: " +   parseInt(firstNumber));
+            console.log("The second number is: " + secondNumber);
+            console.log("The operator is: " + operator);
+            console.log("The index is: " + index);
+
+            display.innerHTML = operate(operator, firstNumber, secondNumber) + " " + equation.slice(index);
+
+            break;
+  
+          }
+          
+        }
+
+      }
+      if(element === '+' || element === '-' || element === '/' || element === '*') {
+        flag = true;
+      }
+      
+      
+    }
 
   } else {
     const answer = '';
@@ -73,7 +110,22 @@ function equate (){
 
 }
 
-
+function trimExtra(number) {
+  number.trim();
+  let substring = "";
+  if (number.length > 1) {
+    for (let index = 0; index < number.length; index++) {
+      const element = number[index];
+      if (Number.isInteger(parseInt(element))) {
+        substring += element;
+      }
+      
+    }
+  }
+  number = substring;
+  return number;
+  
+}
 
 function addToDisplay(itemToAdd) {
   display.innerHTML = display.innerHTML + " " + itemToAdd;
