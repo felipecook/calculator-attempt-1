@@ -43,10 +43,16 @@ function operate(operator, numberA, numberB) {
 const numbers = document.querySelectorAll(".number");
 const operators = document.querySelectorAll(".operator");
 const equals = document.querySelector("#equals__operator");
+const clearOperator = document.querySelector("#clear__operator");
 
 const display = document.querySelector(".display__text");
 
 equals.addEventListener('click', equate);
+clearOperator.addEventListener('click', clearCalculator);
+
+function clearCalculator() {
+  display.innerHTML = "";
+}
 
 function equate (){
   const equation = display.innerHTML.trim();
@@ -66,6 +72,7 @@ function equate (){
 
 
 }
+
 
 
 function addToDisplay(itemToAdd) {
