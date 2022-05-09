@@ -1,0 +1,55 @@
+:root {
+
+
+  --color-primary: #386293;
+  --color-bg: #1f2641;
+
+  --container-width-lg: 80%;
+  --container-width-md: 90%;
+  --container-width-sm: 94%;
+
+
+
+}
+
+
+.container {
+  width: var(--container-width-lg);
+  margin: 0 auto;
+}
+
+
+.calculator__container {
+  height: 100%;
+
+  
+}
+
+
+.calculator {
+  display: flex;
+  
+  flex-direction: column;
+  border: 1px solid;
+
+}
+
+
+.display {
+  flex: 1;
+  height: 10rem;
+}
+
+.buttons {
+  flex: 1;
+  
+  
+  height: 20%;
+}
+
+.numberbuttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+
