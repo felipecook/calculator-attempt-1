@@ -50,18 +50,20 @@
 }
 
 .buttons {
-  
+  display: flex;
   
 }
 
 .operators {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  flex: 1;
 }
 
 .numberbuttons {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  flex: 2;
 }
 
 
