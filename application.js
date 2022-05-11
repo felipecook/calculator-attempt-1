@@ -123,7 +123,7 @@ function trimExtra(number) {
 }
 
 function addToDisplay(itemToAdd) {
-  display.innerHTML = display.innerHTML + " " + itemToAdd;
+  display.innerHTML = display.innerHTML + itemToAdd;
 }
 
 function deleteLastElement() {
