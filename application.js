@@ -1,3 +1,14 @@
+const numbers = document.querySelectorAll(".number");
+const operators = document.querySelectorAll(".operator");
+const equals = document.querySelector("#equals__operator");
+const clearOperator = document.querySelector("#clear__operator");
+
+const display = document.querySelector(".display__text");
+const backspace = document.querySelector("#backspace__operator");
+
+
+
+
 function add(numberA, numberB) {
   const answer = parseInt(numberA) + parseInt(numberB)
   return answer;
@@ -35,17 +46,6 @@ function operate(operator, numberA, numberB) {
   }
   
 }
-
-
-const numbers = document.querySelectorAll(".number");
-const operators = document.querySelectorAll(".operator");
-const equals = document.querySelector("#equals__operator");
-const clearOperator = document.querySelector("#clear__operator");
-
-const display = document.querySelector(".display__text");
-
-equals.addEventListener('click', equate);
-clearOperator.addEventListener('click', clearCalculator);
 
 function clearCalculator() {
   display.innerHTML = "";
@@ -102,62 +102,7 @@ function equate (){
     }
 
     display.innerHTML = result;
-
   }
-
-
-
-
-  
-
-  // if (equation.length > 5) {
-  //   let flag = false;
-  //   for (let index = 0; index < equation.length; index++) {
-  //     const element = equation[index];
-  //     if ((element === '+' || element === '-' || element === '/' || element === '*') && flag === true) {
-  //       let firstNumber = 0;
-  //       let secondNumber = 0;
-  //       let operator = 0;
-        
-  //       for (let jindex = 0; jindex <= index; jindex++) {
-  //         secondElement = equation[jindex]; 
-  //         if (secondElement === '+' || secondElement === '-' || secondElement === '/' || secondElement === '*') {
-  //           firstNumber = equation.slice(0, jindex);
-  //           operator = equation[jindex];
-  //           secondNumber = equation.slice(jindex + 1, index);
-  //           firstNumber = trimExtra(firstNumber);
-  //           secondNumber = trimExtra(secondNumber);
-
-  //           console.log("The first number is: " +   parseInt(firstNumber));
-  //           console.log("The second number is: " + secondNumber);
-  //           console.log("The operator is: " + operator);
-  //           console.log("The index is: " + index);
-
-  //           display.innerHTML = operate(operator, firstNumber, secondNumber) + " " + equation.slice(index);
-
-  //           break;
-  
-  //         }
-          
-  //       }
-
-  //     }
-  //     if(element === '+' || element === '-' || element === '/' || element === '*') {
-  //       flag = true;
-  //     }
-      
-      
-  //   }
-
-  // } else {
-  //   const answer = '';
-  //   console.log(equation[2]);
-  //   console.log(operate(equation[2], equation[0], equation[4]));
-  //   // answer = operate(equation[2], equation[0], equation[4]);
-  //   display.innerHTML = operate(equation[2], equation[0], equation[4]);
-  // }
-
-
 }
 
 function trimExtra(number) {
@@ -180,6 +125,15 @@ function trimExtra(number) {
 function addToDisplay(itemToAdd) {
   display.innerHTML = display.innerHTML + " " + itemToAdd;
 }
+
+function deleteLastElement() {
+  let string = display.innerHTML;
+  display.innerHTML = string.slice(0, string.length - 2);
+}
+
+equals.addEventListener('click', equate);
+clearOperator.addEventListener('click', clearCalculator);
+backspace.addEventListener('click', deleteLastElement)
 
 operators.forEach(operator => {
   operator.addEventListener('click', () => {
