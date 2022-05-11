@@ -1,8 +1,10 @@
 :root {
 
 
-  --color-primary: #386293;
-  --color-bg: #1f2641;
+  --color-primary: #749fd0;
+  --color-secondary: #51d3cf;
+
+  --color-bg: #a4aac2;
 
   --container-width-lg: 80%;
   --container-width-md: 90%;
@@ -28,7 +30,7 @@
 
 .calculator {
   display: flex;
-  
+  background: var(--color-bg);
   flex-direction: column;
   border: 1px solid;
 
@@ -58,12 +60,21 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   flex: 1;
+
+}
+
+.operator {
+  background: var(--color-primary);
 }
 
 .numberbuttons {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   flex: 2;
+}
+
+.number {
+  background: var(--color-secondary);
 }
 
 
