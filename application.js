@@ -1,9 +1,6 @@
 function add(numberA, numberB) {
   const answer = parseInt(numberA) + parseInt(numberB)
-
   return answer;
-
-  
 }
 
 function subtract(numberA, numberB) {
@@ -83,7 +80,13 @@ function equate (){
     firstNumber = trimExtra(firstNumber);
     secondNumber = trimExtra(secondNumber);
 
-    display.innerHTML = operate(operator, firstNumber, secondNumber) + " " + equation.slice(positionOfOperators[1]);
+    let result = operate(operator, firstNumber, secondNumber);
+    if (operator === '/'){
+      result = Number.parseFloat(result).toFixed(2);
+    }
+    console.log(result);
+
+    display.innerHTML = result + " " + equation.slice(positionOfOperators[1]);
 
   } else {
     let firstNumber = equation.slice(0, positionOfOperators[0]);
@@ -93,7 +96,12 @@ function equate (){
     firstNumber = trimExtra(firstNumber);
     secondNumber = trimExtra(secondNumber);
 
-    display.innerHTML = operate(operator, firstNumber, secondNumber);
+    let result = operate(operator, firstNumber, secondNumber);
+    if (operator === '/'){
+      result = Number.parseFloat(result).toFixed(2);
+    }
+
+    display.innerHTML = result;
 
   }
 
