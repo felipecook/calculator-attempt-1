@@ -5,6 +5,7 @@ const clearOperator = document.querySelector("#clear__operator");
 
 const display = document.querySelector(".display__text");
 const backspace = document.querySelector("#backspace__operator");
+const decimal = document.querySelector("#dot__operator");
 
 
 
@@ -126,6 +127,11 @@ function addToDisplay(itemToAdd) {
   display.innerHTML = display.innerHTML + itemToAdd;
 }
 
+function addDecimalToDisplay() {
+  let currentDisplay = display.innerHTML;
+  
+}
+
 function deleteLastElement() {
   let string = display.innerHTML;
   display.innerHTML = string.slice(0, string.length - 2);
@@ -133,7 +139,8 @@ function deleteLastElement() {
 
 equals.addEventListener('click', equate);
 clearOperator.addEventListener('click', clearCalculator);
-backspace.addEventListener('click', deleteLastElement)
+backspace.addEventListener('click', deleteLastElement);
+decimal.addEventListener('click', )
 
 operators.forEach(operator => {
   operator.addEventListener('click', () => {
