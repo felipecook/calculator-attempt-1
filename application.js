@@ -94,8 +94,8 @@ function equate (){
     let secondNumber = equation.slice(positionOfOperators[0] + 1, equation.length);
     let operator = equation[positionOfOperators[0]];
 
-    firstNumber = trimExtra(firstNumber);
-    secondNumber = trimExtra(secondNumber);
+    // firstNumber = trimExtra(firstNumber);
+    // secondNumber = trimExtra(secondNumber);
 
     let result = operate(operator, firstNumber, secondNumber);
     if (operator === '/'){
@@ -106,30 +106,31 @@ function equate (){
   }
 }
 
-function trimExtra(number) {
-  number.trim();
-  let substring = "";
-  if (number.length > 1) {
-    for (let index = 0; index < number.length; index++) {
-      const element = number[index];
-      if (Number.isInteger(parseInt(element))) {
-        substring += element;
-      }
+// function trimExtra(number) {
+//   number.trim();
+//   let substring = "";
+//   if (number.length > 1) {
+//     for (let index = 0; index < number.length; index++) {
+//       const element = number[index];
+//       if (Number.isInteger(parseInt(element))) {
+//         substring += element;
+//       }
       
-    }
-  }
-  number = substring;
-  return number;
+//     }
+//   }
+//   number = substring;
+//   return number;
   
-}
+// }
 
 function addToDisplay(itemToAdd) {
   display.innerHTML = display.innerHTML + itemToAdd;
 }
 
 function addDecimalToDisplay() {
-  let currentDisplay = display.innerHTML;
-  
+  display.innerHTML = display.innerHTML + ".";
+  decimal.disabled = true;
+
 }
 
 function deleteLastElement() {
@@ -140,7 +141,7 @@ function deleteLastElement() {
 equals.addEventListener('click', equate);
 clearOperator.addEventListener('click', clearCalculator);
 backspace.addEventListener('click', deleteLastElement);
-decimal.addEventListener('click', )
+decimal.addEventListener('click', addDecimalToDisplay);
 
 operators.forEach(operator => {
   operator.addEventListener('click', () => {
