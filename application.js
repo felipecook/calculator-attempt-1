@@ -49,10 +49,12 @@ function operate(operator, numberA, numberB) {
 }
 
 function clearCalculator() {
+  decimal.disabled = false;
   display.innerHTML = "";
 }
 
 function equate (){
+  decimal.disabled = false;
   const equation = display.innerHTML.trim();
 
   let numOfOperators = 0;
@@ -135,7 +137,10 @@ function addDecimalToDisplay() {
 
 function deleteLastElement() {
   let string = display.innerHTML;
-  display.innerHTML = string.slice(0, string.length - 2);
+  if (string.charAt(string.length - 1) == ".") {
+    decimal.disabled = false;
+  }
+  display.innerHTML = string.slice(0, string.length - 1);
 }
 
 equals.addEventListener('click', equate);
