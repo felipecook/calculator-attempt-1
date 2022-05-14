@@ -132,7 +132,6 @@ function addToDisplay(itemToAdd) {
 function addDecimalToDisplay() {
   display.innerHTML = display.innerHTML + ".";
   decimal.disabled = true;
-
 }
 
 function deleteLastElement() {
@@ -151,6 +150,7 @@ decimal.addEventListener('click', addDecimalToDisplay);
 operators.forEach(operator => {
   operator.addEventListener('click', () => {
     addToDisplay(operator.innerHTML);
+    decimal.disabled = false;
   })
 })
 
